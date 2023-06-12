@@ -1,0 +1,20 @@
+.home-gallery {
+  margin-top: 1rem;
+  &-header {
+    padding: 1rem 0;
+    text-align: center;
+    &-title {
+      font-size: 1.5rem;
+    }
+  }
+  &-list {
+    display: grid;
+    gap: 0.5rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    &-img {
+      max-width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+}

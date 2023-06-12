@@ -1,0 +1,58 @@
+@import "_colors.scss";
+.footer {
+  // min-height: 6.25rem;
+  background: $pink-ligth;
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  padding: 1.75rem 0;
+  &-nav {
+    &-list {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+    &-item {
+      padding: 0.2rem 0.5rem;
+      transition: 0.3s ease background;
+      &:nth-child(2) {
+        position: relative;
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          border-radius: 2px;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 0.8rem;
+          background: $dark-pink-opaque;
+        }
+        &::after {
+          right: -0.5rem;
+        }
+        &::before {
+          left: -0.5rem;
+        }
+      }
+      &:hover {
+        background: $pink;
+      }
+    }
+    &-link {
+      color: $dark;
+      text-decoration: none;
+    }
+  }
+  &-social {
+    display: flex;
+    gap: 1rem;
+    &-item {
+      text-decoration: none;
+      color: $dark;
+      &-icon {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

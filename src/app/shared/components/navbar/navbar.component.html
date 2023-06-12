@@ -1,0 +1,40 @@
+<header>
+  <nav class="navbar" id="navbar">
+    <a href="/" class="navbar-title">
+      <h2>DeliAliCake</h2>
+    </a>
+    <button class="navbar-button" (click)="handleShowModal()">
+      <i class="pi navbar-button-icon" [class.pi-bars]="!isShownMenu"></i>
+    </button>
+    <ul class="navbar-list" [class.shown]="isShownMenu">
+
+      <button class="navbar-button close" (click)="handleShowModal()">
+        <i class="pi navbar-button-icon" [class.pi-times]="isShownMenu"></i>
+      </button>
+      <li class="navbar-item">
+        <a class="navbar-item-link" href="/">Inicio</a>
+      </li>
+      <li class="navbar-item">
+        <a class="navbar-item-link" href="quote">Cotizar</a>
+      </li>
+      <li class="navbar-item">
+        <a class="navbar-item-link" href="about">Sobre mi</a>
+      </li>
+      <li class="navbar-item">
+        <a class="navbar-item-link" href="contact">Contacto</a>
+      </li>
+      <li class="navbar-socials">
+        <a href="#" class="navbar-socials-item">
+          <i class="navbar-socials-item-icon pi pi-facebook"></i>
+        </a>
+        <a href="#" class="navbar-socials-item">
+          <i class="navbar-socials-item-icon pi pi-instagram"></i>
+        </a>
+        <a href="#" class="navbar-socials-item">
+          <i class="navbar-socials-item-icon pi pi-twitter"></i>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
