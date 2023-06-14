@@ -1,0 +1,17 @@
+@import "_colors";
+
+.quote {
+  padding: 1rem 2rem 2rem;
+  min-height: 75vh;
+  &-header {
+    padding: 1rem 0;
+    &-title {
+      font-size: 2rem;
+      font-weight: 400;
+      color: $pink;
+    }
+  }
+  &-main {
+    padding: center;
+  }
+}

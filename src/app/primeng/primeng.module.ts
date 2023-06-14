@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
-  exports: [ButtonModule, MenubarModule, TableModule],
+  exports: [ButtonModule, MenubarModule, TableModule, MultiSelectModule, DropdownModule],
 })
 export class PrimeNgModule {}

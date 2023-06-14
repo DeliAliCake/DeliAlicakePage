@@ -1,0 +1,96 @@
+<form class="quote-form" [formGroup]="formQuote" (submit)="sendInfo()">
+  <div class="p-float-label quote-form-group">
+    <p-dropdown
+    class="quote-form-input"
+    inputId="cakeType"
+    [options]="cakeTypeOptions"
+    [filter]="false"
+    formControlName="cakeType"
+    placeholder="Seleccione tipo del postre"
+    optionLabel="label"></p-dropdown>
+    <label for="cakeType" class="float-label quote-form-label">
+      Tipo de Postre
+    </label>
+  </div>
+  <div class="p-float-label quote-form-group">
+    <p-dropdown
+    class="quote-form-input"
+    inputId="cakeSize"
+    [options]="cakeSizeOptions"
+    [filter]="false"
+    formControlName="cakeSize"
+    placeholder="Seleccione tamaño del postre"
+    optionLabel="label"></p-dropdown>
+    <label for="cakeSize" class="float-label quote-form-label">
+      Tamaño del postre
+    </label>
+  </div>
+  <div class="p-float-label quote-form-group">
+    <p-dropdown
+      class="quote-form-input"
+      inputId="cakeBaseFlavor"
+      [options]="cakeBaseFlavorOptions"
+      [filter]="false"
+      formControlName="cakeBaseFlavor"
+      placeholder="Seleccione sabor base del postre"
+      optionLabel="label"></p-dropdown>
+    <label for="cakeBaseFlavor" class="float-label quote-form-label">
+      Sabor base
+    </label>
+  </div>
+  <div class="p-float-label quote-form-group coverage">
+    <p-dropdown
+      class="quote-form-input"
+      inputId="withCoverage"
+      [options]="validationsOptions"
+      [filter]="false"
+      placeholder="¿Desa covertura?"
+      formControlName="withCoverage"
+      optionLabel="label"></p-dropdown>
+    <label for="withCoverage" class="float-label quote-form-label">
+      Con covertura
+    </label>
+      
+  </div>
+  <div class="p-float-label quote-form-group filled">
+    <p-dropdown
+      class="quote-form-input"
+      inputId="withFilled"
+      [options]="validationsOptions"
+      [filter]="false"
+      placeholder="¿Desa relleno?"
+      formControlName="withFilled"
+      optionLabel="label"></p-dropdown>
+    <label for="withFilled" class="float-label quote-form-label">
+      Con relleno
+    </label>
+  </div>
+  <div class="p-float-label quote-form-group" *ngIf="withCoverage">
+    <p-dropdown
+      class="quote-form-input"
+      inputId="coverageFlavor"
+      [options]="coverageFlavorOptions"
+      [filter]="false"
+      formControlName="coverageFlavor"
+      placeholder="Seleccione el sabor de cobertura"
+      optionLabel="label"></p-dropdown>
+    <label for="coverageFlavor" class="float-label quote-form-label">
+      Sabor de cobertura
+    </label>
+  </div>
+  <div class="p-float-label quote-form-group" *ngIf="withFilled">
+    <p-dropdown
+    class="quote-form-input"
+    inputId="filledFlavor"
+    [options]="filledFlavorOptions"
+    [filter]="false"
+    formControlName="filledFlavor"
+    placeholder="Seleccione el sabor del relleno"
+    optionLabel="label"></p-dropdown>
+    <label for="filledFlavor" class="float-label quote-form-label">
+      Sabor de relleno
+    </label>
+  </div>
+
+  <button class="quote-form-button" [class.disabled]= "!formQuote.valid" [disabled]="!formQuote.valid">Enviar</button>
+</form>

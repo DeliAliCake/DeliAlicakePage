@@ -1,0 +1,65 @@
+@import "_colors";
+.quote-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  flex-direction: column;
+  gap: 1.75rem 1rem;
+  padding: 1.5rem 0;
+  
+  &-group {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/-1;
+    &.coverage,
+    &.filled {
+      grid-column: unset;
+    }
+  }
+  &-button {
+    grid-column: 1/-1;
+    justify-self: center;
+    padding: .75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-top: .5rem;
+    color: $dark-pink;
+    background-color: $pink-ligth;
+    border: 2px solid $dark-pink;
+    transition: .3s ease background, .3s ease color, .3s ease border;
+    &.disabled{
+      background: $grey;
+      color: $dark-grey;
+      cursor:default;
+      border: 2px solid $dark-grey;
+    }
+    &:hover{
+      background-color: $pink-opaque;
+      box-shadow: 0 0 .6rem $pink-ligth;
+    }
+  }
+}
+:host ::ng-deep {
+  .p-dropdown {
+    width: 100%;
+    outline: none;
+    &:not(.p-disabled):hover {
+      outline: 2px solid $pink-ligth;
+      border: 2px solid transparent;
+      box-shadow: 0 0 0.4rem $pink;
+    }
+    &:not(.p-disabled).p-dropdown {
+      outline: 2px solid $pink-ligth;
+      border: 2px solid transparent;
+      box-shadow: 0 0 0.4rem $pink;
+    }
+    &-items {
+      & .p-element {
+        color: $grey;
+      }
+      &-wrapper {
+        border: 2px solid $pink-opaque;
+      }
+    }
+  }
+}
