@@ -1,0 +1,13 @@
+.navigations-buttons-container{
+  background: #38383854;
+  position: fixed;
+  bottom: 11rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem .2rem;
+  min-width: 3rem;
+  backdrop-filter: blur(2px);
+  border-radius: 5rem;
+  align-items: center;
+}
