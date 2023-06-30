@@ -1,0 +1,20 @@
+@import '_colors';
+.whatsapp-button {
+  color: $ligth;
+  text-decoration: none;
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: $green;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .3s ease color, .3s ease background;
+  &-icon{
+    font-size: 2.2rem;
+  }
+  &:hover{
+    background: $ligth;
+    color: $green;
+  }
+}
