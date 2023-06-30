@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./whatsapp-button.component.scss']
 })
 export class WhatsappButtonComponent {
-  numberPhone = '3153909750'
+  numberPhone = '3012324977'
   whastUrl = `https://wa.me/${this.numberPhone}`
   goToWhatsapp(){
     window.open(this.whastUrl, '_blank')
