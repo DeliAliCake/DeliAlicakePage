@@ -13,6 +13,7 @@
   scale: 0;
   transition: 0.5s ease opacity, 0.5s ease scale;
   translate: -50%;
+  cursor: pointer;
   &.visible {
     translate: unset;
     opacity: 1;
@@ -26,16 +27,5 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: $brown;
-  }
-}
-@keyframes appear {
-  from {
-    background: red;
-  }
-  50% {
-    background: blue;
-  }
-  to {
-    background: green;
   }
 }

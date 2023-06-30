@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import * as quoteFormFields from '../../../helpers/quoteform-fields';
+import { QuoteService } from '../services/quoteform.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'quote-form',
@@ -21,8 +23,11 @@ export class QuoteformComponent {
   dropdownClass = 'quote-form-input';
   withCoverage: boolean = false;
   withFilled: boolean = false;
-
-  constructor(private formBuilder: FormBuilder) {}
+  url = 'send-info';
+  constructor(
+    private formBuilder: FormBuilder,
+    private quoteService: QuoteService
+  ) {}
   ngOnInit(): void {
     this.formQuote = this.formBuilder.group({
       cakeType: ['', Validators.required],
@@ -32,6 +37,8 @@ export class QuoteformComponent {
       withFilled: ['', Validators.required],
       coverageFlavor: [''],
       filledFlavor: [''],
+      name: ['', Validators.required],
+      email: ['', Validators.required]
     });
     this.formQuote.get('withCoverage')?.valueChanges.subscribe((option) => {
       setTimeout(() => {
@@ -70,6 +77,16 @@ export class QuoteformComponent {
   }
 
   sendInfo(): void {
-    console.log(this.formQuote.value);
+    this.quoteService
+      .sendToEmail(this.url, this.formQuote.value)
+      .pipe(take(1))
+      .subscribe((data) => {
+        console.log(data)
+      });
+  }
+  testApi(): void {
+    this.quoteService.test('api').pipe(take(1)).subscribe(response => {
+      console.log(response)
+    })
   }
 }

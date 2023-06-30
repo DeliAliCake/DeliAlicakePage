@@ -1,5 +1,18 @@
 <form class="quote-form" [formGroup]="formQuote" (submit)="sendInfo()">
   <div class="p-float-label quote-form-group">
+    <input class="quote-form-input quote-form-text" type="text" pInputText formControlName="name">
+    <label for="cakeType" class="float-label quote-form-label">
+      Nombre
+    </label>
+  </div>
+  <div class="p-float-label quote-form-group">
+    <input class="quote-form-input quote-form-text" type="email" pInputText formControlName="email"
+    >
+    <label for="cakeType" class="float-label quote-form-label">
+      Correo
+    </label>
+  </div>
+  <div class="p-float-label quote-form-group">
     <p-dropdown
     class="quote-form-input"
     inputId="cakeType"
@@ -91,6 +104,6 @@
       Sabor de relleno
     </label>
   </div>
-
+  
   <button class="quote-form-button" [class.disabled]= "!formQuote.valid" [disabled]="!formQuote.valid">Enviar</button>
 </form>

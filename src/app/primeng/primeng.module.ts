@@ -6,8 +6,9 @@ import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  exports: [ButtonModule, MenubarModule, TableModule, MultiSelectModule, DropdownModule],
+  exports: [ButtonModule, MenubarModule, TableModule, MultiSelectModule, DropdownModule, InputTextModule],
 })
 export class PrimeNgModule {}

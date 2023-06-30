@@ -30,6 +30,7 @@
       border: 2px solid $pink-ligth;
       font-weight: 600;
       transition: 0.3s ease background, 0.3s ease color;
+      cursor: pointer;
       &:hover {
         background: $pink-opaque;
         color: $pink;
